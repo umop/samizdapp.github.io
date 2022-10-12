@@ -35,8 +35,9 @@ export const AddNewDevice = ({
       <br />
       <li>
         <strong>If the device does not shutdown:</strong> This means that setup
-        has not completed. Setup should not take more than a few minutes. The
-        most common cause of setup not completing is bad WiFi credentials.
+        has not completed. Setup should not take more than a few minutes.
+        Reattempt setup by turning the device off and back on. The most common
+        cause of setup not completing is bad WiFi credentials.
       </li>
       <br />
       <li>
@@ -57,6 +58,8 @@ fleet. However, if you wish to customize the software on your device or
 contribute to the development of SamizdApp, you'll need to configure
 self-managed deployments.
 
+Ensure your device is powered off before beginning.
+
 ## Join the Fleet (Recommended)
 
 The recommended way to setup your device is to join the official SamizdApp
@@ -65,15 +68,13 @@ fleet.
 1. Open up the fleet at:
    https://hub.balena.io/organizations/gh_rynomad/fleets/rock.
 2. Click on "Get started" to add your device to the fleet.
-3. Follow the instructions on the right of the "Add new device" screen:
+3. Follow the instructions on the right of the "Add new device" screen
+   (after inserting the SD card, power on the device):
 
-   <AddNewDevice
-     Success={() => (
-       <>
-         Proceed to <a href="setup-client">setup your client</a>.
-       </>
-     )}
-   />
+   <AddNewDevice Success={() => <> </>} />
+
+4. Wait for 10 minutes for the device to finish updating, then proceed
+   to <a href="setup-client">setup your client</a>.
 
 ## Self-Managed Deployments (For Developers)
 
@@ -95,7 +96,8 @@ should work.
    https://www.balena.io/docs/learn/getting-started/raspberrypi3/nodejs/#create-a-fleet
    to finish creating your fleet, adding your device, and provisioning your
    device.
-4. Follow the remainder of the "Add new device" Instructions section:
+4. Follow the remainder of the "Add new device" Instructions section
+   (after inserting the SD card, power on the device):
 
    <AddNewDevice />
 
