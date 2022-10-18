@@ -24,12 +24,12 @@ likely work as well.
    a browser error), it is likely because the box is still updating. Wait 5
    more minutes and try again.
 
-5. If you see a message saying "the origin is trusted!", then click on the
+5. If you see a message saying "Install the PWA to continue.", then click on the
    install button in the address bar:
 
    ![Install button located in the right side of the address bar](/img/install-button.png)
 
-   (If you don't see the trusted message or the install button, then something
+   (If you don't see the install message or the install button, then something
    has gone wrong.)
 
 6. In the popup, select "Install"
