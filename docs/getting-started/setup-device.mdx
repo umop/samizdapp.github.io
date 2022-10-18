@@ -138,14 +138,7 @@ need to install the balena CLI.
 After the CLI is installed, and you have logged in, you can push a release of
 SamizdApp to your device.
 
-1. Build the `daemon/next` project:
-   ```bash
-   cd daemon/next
-   npm install
-   npm run export
-   cd ../../
-   ```
-2. Build the entire project and push to your device via balenaCloud (expect
+1. Build the entire project and push it to your device via balenaCloud (expect
    this to take awhile before completing):
    ```
    balena push ${org}/${fleet} -m
@@ -153,7 +146,7 @@ SamizdApp to your device.
    where `${org}` is the name of your organization, typically your username,
    and `${fleet}` is the name you gave to you fleet. (The full slug of your
    fleet can easily be copied from the fleet Summary page.)
-3. Once the push has successfully completed, balena will propagate it to all
+2. Once the push has successfully completed, balena will propagate it to all
    the devices in your fleet. You can monitor this in the dashboard page for
    your device in balenaCloud. Once the release for all services has been
    updated, the deployment is complete. You can monitor the logs for any
