@@ -1,10 +1,13 @@
 ---
+description: >
+  Once you're box is running, install the client on your phone or laptop.
+
 sidebar_position: 3
 ---
 
-# Setup Your Client
+# Install Client
 
-Once you're device is up and running, you'll want to setup the client that
+Once you're box is up and running, you'll want to set up the client device that
 you'll use to access the SamizdApp network. The following options are for the
 officially supported browsers/devices; however, other browsers/devices will
 likely work as well.
