@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
+description: After installing the client, you can create your Pleroma account.
 ---
 
 # Sign Up For Pleroma
 
-If your client has been correctly setup, then you should be taken to Pleroma
+If your client has been correctly installed, then you should be taken to Pleroma
 when you open the client app. Get started by creating your Pleroma account:
 
 1. Fill out the sign up form with your name, email, and password. Agree to the

@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Setup Your Device
+# BYOB (Bring Your Own Box)
 
 export const AddNewDevice = ({
   Success = () => (
@@ -50,24 +50,23 @@ export const AddNewDevice = ({
   );
 };
 
-**Note for _SamizdApp Box_ devices:** If your device is a _SamizdApp Box_
-received from us, then congratulations, your device is already set up! You can
-skip this step and proceed to [Setup Your Client](setup-client.md). For all
-other devices, this step is required.
+Instead of obtaining a _SamizdApp Box_ from us, you can install SamizdApp on a
+device of your choosing. **Note:** the device must be capable of
+[running balenaOS](https://www.balena.io/os/docs/supported-boards/). There may
+also be additional hardware requirements for running SamizdApp.
 
-To setup your device, you'll need to connect it to balenaCloud. Balena is used
-for managing deployments of the SamizdApp software to your device.
-
-The recommended way to connect to balena is to join the official SamizdApp
-fleet. However, if you wish to customize the software on your device or
-contribute to the development of SamizdApp, you'll need to configure
-self-managed deployments.
+To setup your box, you'll need to connect it to balenaCloud. Balena is used
+for managing deployments of the SamizdApp software to your box. The
+recommended way to connect to balena is to join the official SamizdApp fleet.
+However, if you wish to customize the software on your box or contribute to
+the development of SamizdApp, you'll need to configure self-managed
+deployments.
 
 Ensure your device is powered off before beginning.
 
 ## Join the Fleet (Recommended)
 
-The recommended way to setup your device is to join the official SamizdApp
+The recommended way to setup your box is to join the official SamizdApp
 fleet.
 
 1. Open up the fleet at:
@@ -79,17 +78,17 @@ fleet.
    <AddNewDevice Success={() => <> </>} />
 
 4. Wait for 10 minutes for the device to finish updating, then proceed
-   to <a href="setup-client">setup your client</a>.
+   to <a href="../getting-started/install-client">install the client</a>.
 
 ## Self-Managed Deployments (For Developers)
 
-If you wish to customize the software on your device or contribute to the
-development of SamizdApp, you'll need to manage deployments to your device
+If you wish to customize the software on your box or contribute to the
+development of SamizdApp, you'll need to manage deployments to your box
 yourself.
 
 ### Add Device to Fleet
 
-To setup and configure your device using balena, you'll need to create a free
+To setup and configure your box using balena, you'll need to create a free
 balenaCloud account, create a fleet, and add your device to that fleet.
 This section assumes your device is a ROCK Pi 4B; however, any of the
 [devices that balena supports](https://www.balena.io/docs/reference/hardware/devices/)
@@ -127,7 +126,7 @@ cd herakles/
 
 ### Configure Your Dev Environment
 
-In order to easily deploy code from your dev environment to your device, you'll
+In order to easily deploy code from your dev environment to your box, you'll
 need to install the balena CLI.
 
 1. Continue following the same docs as before to install balena CLI:
@@ -136,16 +135,19 @@ need to install the balena CLI.
 ### Push a Release
 
 After the CLI is installed, and you have logged in, you can push a release of
-SamizdApp to your device.
+SamizdApp to your box.
 
 1. Build the entire project and push it to your device via balenaCloud (expect
    this to take awhile before completing):
+
    ```
    balena push ${org}/${fleet} -m
    ```
+
    where `${org}` is the name of your organization, typically your username,
    and `${fleet}` is the name you gave to you fleet. (The full slug of your
    fleet can easily be copied from the fleet Summary page.)
+
 2. Once the push has successfully completed, balena will propagate it to all
    the devices in your fleet. You can monitor this in the dashboard page for
    your device in balenaCloud. Once the release for all services has been
