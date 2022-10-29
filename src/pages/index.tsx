@@ -6,6 +6,7 @@ import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
 
 import styles from "./index.module.css";
+import Introduction from "@site/src/components/Introduction";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -33,6 +34,17 @@ export default function Home(): JSX.Element {
     <Layout title={``} description="Building a decentralized web">
       <HomepageHeader />
       <main>
+        <Introduction />
+
+        <div className={styles.buttons}>
+          <Link
+            className="button button--secondary button--lg"
+            to="/how-it-works"
+          >
+            Read More About How it Works
+          </Link>
+        </div>
+
         <HomepageFeatures />
       </main>
     </Layout>
