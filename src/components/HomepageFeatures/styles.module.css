@@ -1,4 +1,5 @@
 .features {
+  background-color: #badaba;
   display: flex;
   align-items: center;
   padding: 2rem 0;
@@ -8,6 +9,20 @@
 
 .features .row {
   justify-content: center;
+}
+
+.features .col {
+  transition: all 0.3s ease;
+}
+
+.features .col:hover {
+  background-color: #aaa5;
+  box-shadow: 0 0 7px 0 #aaa5;
+  border-radius: 24px;
+}
+
+.features .col:active {
+  background-color: #aaa9;
 }
 
 .featureSvg {

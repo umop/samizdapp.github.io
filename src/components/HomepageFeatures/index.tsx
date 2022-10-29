@@ -36,7 +36,7 @@ function Feature({ title, link, Svg, description }: FeatureItem) {
 
   return (
     <div
-      className={clsx("col col--4")}
+      className={clsx(styles.col, "col col--4")}
       onClick={() =>
         link.indexOf("http") === 0
           ? window.open(link, "_blank")

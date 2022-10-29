@@ -1,0 +1,122 @@
+---
+title: How it Works
+---
+
+import YggdrasilNetwork from "@site/src/pages/how-it-works/yggdrasil-network";
+import Libp2pNetwork from "@site/src/pages/how-it-works/libp2p-network";
+
+# How it Works
+
+SamizdApp currently uses a lot of existing tech and piggybacks on existing
+protocols. This is an overview of everything that happens under the hood.
+
+## The Software
+
+### Pleroma
+
+Our first app is a social media alternative called
+[Pleroma](https://git.pleroma.social/pleroma/pleroma) with a custom frontend
+called [Soapbox](https://gitlab.com/soapbox-pub/soapbox).
+
+## The Architecture
+
+The SamizdApp network is partly a **private [libp2p](https://libp2p.io/)
+network**, and is part of the
+**[Yggdrasil Network](https://yggdrasil-network.github.io/)**.
+
+### Box <-> Box Communications
+
+SamizdApp boxes are federated over the **Yggdrasil Network**.
+
+When it boots up, your box will create a **public Yggdrasil address** for
+itself by opening up a **UPnP port on your network's router**. This will allow
+other boxes to connect to yours.
+
+Your box will then access the Yggdrasil network by finding and connecting to
+_another_ box with a public Yggdrasil address. Once connected to a public box,
+your box will now have access to the entire SamizdApp network through
+Yggdrasil.
+
+The other box that you first connect to will now **relay** all of your traffic
+across the SamizdApp network. This could be a problem if the other box goes
+down, but won't be as long as your box is able to find _additional_ boxes with
+public Yggdrasil addresses.
+
+By creating a public Yggdrasil address for itself (via the UPnP port that it
+opens on your router), your box makes itself available as a relay to other
+boxes on the SamizdApp network.
+
+<div className="yggdrasil-network">
+
+<style>
+  {`
+    .yggdrasil-network {
+        margin: 50px auto 75px;
+        width: 700px;
+        max-width: 100%;
+    }
+
+    .yggdrasil-network svg {
+        width: 100%;
+    }
+    `}
+</style>
+
+<YggdrasilNetwork />
+
+</div>
+
+### Client <-> Box Communications
+
+Clients and boxes communicate with each other over a **private libp2p
+network**.
+
+A **client** is a device (i.e. a phone or a laptop) that is paired to your box.
+You can pair a new client to your box by following the
+[Getting Started docs](../../docs/getting-started/install-client), which
+will have you install the client app on your device.
+
+#### Via LAN
+
+Clients will initially be paired to your box over your **LAN** (or whatever
+network your device uses to connect to your box). Once your client is paired,
+the client app will be able to access your box over your LAN as long as it is
+connected.
+
+#### Via the Internet
+
+When it boots up, your box will create a **public _client_ address** for
+itself by opening up a **UPnP port on your network's router**. This will allow
+_clients_ to connect to your box.
+
+Pending additional security, only _your_ client can access the services on
+_your_ box. If your client is connected to a public network (i.e. the
+internet), it will access your box via your box's public client address.
+However, if your box does not have a public client address, your client can
+still access your box by connecting to _another_ box with a public client
+address. In this circumstance, the other box that your client connects to will
+**relay** all of the traffic between your client and your box.
+
+By creating a a public client address for itself (via the UPnP port that it
+opens on your router), your box makes itself available as a relay to other
+clients on the SamizdApp network.
+
+<div className="libp2p-network">
+
+<style>
+  {`
+    .libp2p-network {
+        margin: 50px auto 75px;
+        width: 700px;
+        max-width: 100%;
+    }
+
+    .libp2p-network svg {
+        width: 100%;
+    }
+    `}
+</style>
+
+<Libp2pNetwork />
+
+</div>

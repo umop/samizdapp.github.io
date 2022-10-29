@@ -1,0 +1,50 @@
+.introduction {
+  font-size: 1.5em;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.introduction h2 {
+  font-size: 1.5em;
+  margin: 20px 0 40px;
+  text-align: center;
+}
+
+.introduction section {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 5em;
+}
+
+.introduction section:nth-child(even) {
+  flex-direction: row;
+}
+
+.introduction p {
+  width: 20em;
+}
+
+.introduction svg {
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .introduction {
+    margin-bottom: 2em;
+  }
+
+  .introduction section,
+  .introduction section:nth-child(even) {
+    flex-direction: column-reverse;
+    margin-bottom: 0;
+  }
+
+  .introduction p {
+    width: 100%;
+  }
+
+  .introduction svg {
+    margin: 1em auto;
+  }
+}
