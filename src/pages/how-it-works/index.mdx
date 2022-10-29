@@ -2,6 +2,8 @@
 title: How it Works
 ---
 
+import YggdrasilNetwork from "@site/src/pages/how-it-works/yggdrasil-network";
+
 # How it Works
 
 SamizdApp currently uses a lot of existing tech and piggybacks on existing
@@ -42,6 +44,26 @@ public Yggdrasil addresses.
 By creating a public Yggdrasil address for itself (via the UPnP port that it
 opens on your router), your box makes itself available as a relay to other
 boxes on the SamizdApp network.
+
+<div className="yggdrasil-network">
+
+<style>
+  {`
+    .yggdrasil-network {
+        margin: 50px auto 75px;
+        width: 700px;
+        max-width: 100%;
+    }
+
+    .yggdrasil-network svg {
+        width: 100%;
+    }
+    `}
+</style>
+
+<YggdrasilNetwork />
+
+</div>
 
 ### Client <-> Box Communications
 
