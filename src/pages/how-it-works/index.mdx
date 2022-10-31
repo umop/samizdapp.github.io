@@ -7,6 +7,46 @@ import Libp2pNetwork from "@site/src/pages/how-it-works/libp2p-network";
 
 # How it Works
 
+<style>
+  {`
+    .disclaimer {
+        background-color: #f8ee9a;
+        padding: 10px;
+        border: 1px #ffd500 solid;
+        border-radius: 5px;
+    }
+
+    .disclaimer svg {
+        display: inline-block;
+        float: left;
+        margin: 25px 15px 20px 5px;
+        width: 30px;
+    }
+
+    .disclaimer svg path {
+        fill: #ffd500;
+    }
+  `}
+</style>
+
+<p className="disclaimer">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    x="0"
+    y="0"
+    enableBackground="new 0 0 52 52"
+    version="1.1"
+    viewBox="0 0 52 52"
+    xmlSpace="preserve"
+  >
+    <path d="M26 0C11.664 0 0 11.663 0 26s11.664 26 26 26 26-11.663 26-26S40.336 0 26 0zm2 41a2 2 0 01-4 0v-2a2 2 0 014 0v2zm0-8a2 2 0 01-4 0V11a2 2 0 014 0v22z"></path>
+  </svg>
+  A core design principle of the samizdapp network is that box owners are the only
+  ones that have control over their own data. However, at this stage, our focus is
+  on establishing robust connectivity across diverse environments, and offer no guarantees
+  as to privacy or anonymity
+</p>
+
 SamizdApp currently uses a lot of existing tech and piggybacks on existing
 protocols. This is an overview of everything that happens under the hood.
 
