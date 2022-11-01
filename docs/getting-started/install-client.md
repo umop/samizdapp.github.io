@@ -23,7 +23,7 @@ likely work as well.
 
 3. At the bottom of the screen, click Relaunch.
 
-4. Navigate to http://samizdapp.local/pwa. If this URL does not load (you get
+4. Navigate to http://samizdapp.local/smz/pwa. If this URL does not load (you get
    a browser error), it is likely because the box is still updating. Wait 5
    more minutes and try again.
 
