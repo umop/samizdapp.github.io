@@ -1,0 +1,43 @@
+.infoBox {
+  display: flex;
+  padding: 10px;
+  border: 1px #000 solid;
+  border-radius: 5px;
+}
+
+.infoBox i {
+  flex: 0 0 50px;
+  padding: 0 10px 0 0;
+  width: 120px;
+}
+
+.infoBox svg {
+  width: 100%;
+}
+
+.infoBox.error {
+  background-color: #ffdfdf;
+  border-color: #c00;
+}
+
+.infoBox.error svg path {
+  fill: #c00;
+}
+
+.infoBox.warning {
+  background-color: #f8ee9a;
+  border-color: #ffd500;
+}
+
+.infoBox.warning svg path {
+  fill: #ffd500;
+}
+
+.infoBox.info {
+  background-color: #d1e3ff;
+  border-color: #0050c7;
+}
+
+.infoBox.info svg path {
+  fill: #0050c7;
+}
