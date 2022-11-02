@@ -1,0 +1,74 @@
+---
+description: >
+  Once you're box is running, install the client on your phone or laptop.
+
+sidebar_position: 3
+---
+
+import InfoBox from "@site/src/components/info-box";
+
+# Install the Client
+
+Once you're box is up and running, you'll want to set up the client device that
+you'll use to access the SamizdApp network. The following options are for the
+officially supported browsers/devices; however, other browsers/devices will
+likely work as well.
+
+## Chrome/Brave on Desktop
+
+1. Navigate to `chrome://flags/#unsafely-treat-insecure-origin-as-secure` in
+   Google Chrome, or `brave://flags/#unsafely-treat-insecure-origin-as-secure`
+   in Brave.
+
+2. Set the "Insecure origins treated as secure" flag to "Enabled", and add
+   `http://samizdapp.local` to the flag's textbox field.
+
+3. At the bottom of the screen, click Relaunch.
+
+4. Navigate to http://samizdapp.local/smz/pwa. If this URL does not load (you get
+   a browser error), it is likely because the box is still updating. Wait 5
+   more minutes and try again.
+
+5. If you see a message saying "Install the PWA to continue.", then click on the
+   install button in the address bar:
+
+   ![Install button located in the right side of the address bar](/img/install-button.png)
+
+   (If you don't see the install message or the install button, then something
+   has gone wrong.)
+
+6. In the popup, select "Install"
+
+You should be redirected to Pleroma.
+
+## Chrome/Brave on Android
+
+<InfoBox>
+  For Android versions <span style={{ fontWeight: "bold" }}>less than 12</span>,
+  these additional steps must be completed{" "}
+  <span style={{ fontStyle: "italic" }}>before</span> continuing (you'll lose
+  internet access on your device, so it's recommended to have these docs open
+  on your laptop):
+
+  <ol>
+   <li>Ensure your box is connected via <span style={{ fontWeight: "bold" }}>ethernet</span> (required).</li>
+   <li>Restart your box by powering it off and on again.</li>
+   <li>Connect your device to your box's WiFi network:
+      <ol>
+         <li>In your device's list of available WiFi networks, select the network named "SamizdApp".</li>
+         <li>Enter the security key: <code>samizdapp</code>.</li>
+      </ol>
+   </li>
+  </ol>
+</InfoBox>
+
+Follow these steps to install the client on your Android device:
+
+1. Follow steps 1-4 of the [Chrome/Brave on Desktop](#chromebrave-on-desktop)
+   instructions.
+2. If you see a message saying "Install the PWA to continue.", then look for
+   the PWA installation button. It may popup at the bottom of your screen the
+   same time as the message. You should definitely be able to find it inside
+   your browser's hamburger menu.
+
+## Safari on iOS
