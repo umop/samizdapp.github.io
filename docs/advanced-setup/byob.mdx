@@ -2,6 +2,8 @@
 sidebar_position: 1
 ---
 
+import InfoBox from "@site/src/components/info-box";
+
 # BYOB (Bring Your Own Box)
 
 export const AddNewDevice = ({
@@ -22,6 +24,13 @@ export const AddNewDevice = ({
     >
       <li>
         Once the device has powered down, remove the SD card from the device.
+        <br />
+        <InfoBox>
+          <strong>For Rock Pi:</strong> balena's instructions specify that the
+          device is powered off when the LED is no longer on. The blue LED
+          indicates the device is on; the green LED indicates the device is
+          merely plugged in, and so will not turn off.
+        </InfoBox>
       </li>
       <br />
       <li>
@@ -38,13 +47,6 @@ export const AddNewDevice = ({
         has not completed. Setup should not take more than a few minutes.
         Reattempt setup by turning the device off and back on. The most common
         cause of setup not completing is bad WiFi credentials.
-      </li>
-      <br />
-      <li>
-        <strong>Note for Rock Pi:</strong> balena's instructions specify that
-        the device is powered off when the LED is no longer on. The blue LED
-        indicates the device is on; the green LED indicates the device is merely
-        plugged in, and so will not turn off.
       </li>
     </ol>
   );
@@ -70,7 +72,7 @@ The recommended way to setup your box is to join the official SamizdApp
 fleet.
 
 1. Open up the fleet at:
-   https://hub.balena.io/organizations/gh_rynomad/fleets/rock.
+   https://hub.balena.io/organizations/gh_rynomad/fleets/alpha.
 2. Click on "Get started" to add your device to the fleet.
 3. Follow the instructions on the right of the "Add new device" screen
    (after inserting the SD card, power on the device):
@@ -105,9 +107,17 @@ should work.
 
    <AddNewDevice />
 
-5. Once the device shows up in your fleet dashboard with the status "Online",
-   your device should be ready to go.
-6. Remember to remove the SD Card from your device once it is set up.
+5. While you're device boots up, go to the "Variables" page (left-hand side
+   navbar) for your fleet; click "Add variable", input the following info,
+   and then click "Add":<br />
+   **Service**: "All services"<br />
+   **Name**: `MDNS_TLD`<br />
+   **Value**: `samizdapp.local`
+
+6. Now go back to the "Summary" page (left-hand side navbar again) for your
+   fleet. Once your device shows up in your fleet dashboard with the status
+   "Online", your device should be ready to go.
+7. Remember to remove the SD Card from your device once it is set up.
 
 ### Clone the Repository
 
